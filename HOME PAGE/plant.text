@@ -1,0 +1,43 @@
+@startuml Academic_Performance_Evaluation_Flowchart
+
+start
+:User accesses "GradeSarthi" web application;
+if (User is a Student) then (yes)
+  :Student logs in;
+  if (Valid credentials?) then (yes)
+    :Student views academic performance;
+    :Student requests mentorship;
+    :Student accesses educational resources;
+    :Student participates in Doubt forums;
+    :Student tracks progress;
+  else (no)
+    :Display error message or password reset option;
+  endif
+  :Student logs out;
+elseif (User is a Faculty Member) then (yes)
+  :Faculty Member logs in;
+  if (Valid credentials?) then (yes)
+    :Faculty Member provides guidance;
+    :Faculty Member evaluates student performance;
+    :Faculty Member add educational resources ;
+  else (no)
+    :Display error message;
+  endif
+  :Faculty Member logs out;
+elseif (User is an Administrator) then (yes)
+  :Administrator logs in;
+  if (Valid credentials?) then (yes)
+    :Administrator manages users;
+    :Administrator manages courses;
+    :Administrator generates reports;
+  else (no)
+    :Display error message;
+  endif
+  :Administrator logs out;
+else (Invalid User)
+  :Exit "GradeSarthi" application;
+endif
+
+stop
+
+@enduml
